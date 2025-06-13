@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.52</version>
+        <version>5.17</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -22,13 +22,6 @@
             <url>https://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
-    
-    <developers>
-        <developer>
-            <id>kalpshekhar</id>
-            <name>Kalpshekhar Gupta</name>
-        </developer>
-    </developers>
 
     <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
         <connection>scm:git:https://github.com/${gitHubRepo}</connection>
@@ -40,8 +33,9 @@
 	<properties>
         <revision>1.1</revision>
         <changelist>-SNAPSHOT</changelist>
+        <jenkins.baseline>2.492</jenkins.baseline>
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
-        <jenkins.version>2.361.4</jenkins.version>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>    
 	</properties>
 
@@ -50,8 +44,8 @@
             <dependency>
                 <!-- Pick up common dependencies for the selected LTS line: https://github.com/jenkinsci/bom#usage -->
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.361.x</artifactId>
-                <version>1723.vcb_9fee52c9fc</version>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>4890.vfca_82c6741a_d</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
